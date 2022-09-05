@@ -1,3 +1,11 @@
+function addZero(param) {
+  if (param >= 0 && param < 10) {
+    return `0${param}`;
+  } else {
+    return param;
+  }
+}
+
 function timer() {
   //Timer
 
@@ -17,14 +25,6 @@ function timer() {
       minutes: minutes,
       seconds: seconds,
     };
-  }
-
-  function addZero(param) {
-    if (param >= 0 && param < 10) {
-      return `0${param}`;
-    } else {
-      return param;
-    }
   }
 
   function setTime(selector, endtime) {
@@ -54,4 +54,5 @@ function timer() {
   setTime(".timer", deadline);
 }
 
-module.exports = timer;
+export default timer;
+export { addZero };

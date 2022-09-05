@@ -1,3 +1,5 @@
+import { addZero } from "./timer";
+
 function slider() {
   // Slider
 
@@ -6,14 +8,6 @@ function slider() {
   const slides = document.querySelectorAll(".offer__slide");
   const curren = document.querySelector("#current");
   const total = document.querySelector("#total");
-
-  function addZero(param) {
-    if (param >= 0 && param < 10) {
-      return `0${param}`;
-    } else {
-      return param;
-    }
-  } //TODO: DELETE after
 
   total.textContent = addZero(slides.length);
 
@@ -53,4 +47,4 @@ function slider() {
     plusSlide(1);
   });
 }
-module.exports = slider;
+export default slider;

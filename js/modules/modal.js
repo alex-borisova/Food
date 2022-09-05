@@ -1,25 +1,25 @@
+function closeModal() {
+  modal.classList.add("hide");
+  modal.classList.remove("show");
+  document.body.style.overflow = ""; //default
+}
+
+function openModal() {
+  modal.classList.add("show");
+  modal.classList.remove("hide");
+  document.body.style.overflow = "hidden";
+  clearInterval(modalTimerId);
+}
+
 function modal() {
   // Modal
 
   const modal = document.querySelector(".modal"),
     buttonsOpen = document.querySelectorAll("[data-modal]");
 
-  function openModal() {
-    modal.classList.add("show");
-    modal.classList.remove("hide");
-    document.body.style.overflow = "hidden";
-    clearInterval(modalTimerId);
-  }
-
   buttonsOpen.forEach((btn) => {
     btn.addEventListener("click", openModal);
   });
-
-  function closeModal() {
-    modal.classList.add("hide");
-    modal.classList.remove("show");
-    document.body.style.overflow = ""; //default
-  }
 
   modal.addEventListener("click", (event) => {
     if (
@@ -49,5 +49,5 @@ function modal() {
   }
   window.addEventListener("scroll", showModalByScroll);
 }
-
-module.exports = modal;
+export default modal;
+export { openModal, closeModal };
