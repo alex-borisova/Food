@@ -32,7 +32,7 @@ function tabs(
   tabsParent.addEventListener("click", (event) => {
     let target = event.target;
 
-    if (target && target.classList.contains(tabsParentSelector.slice(1))) {
+    if (target && target.classList.contains(tabsButtonsSelector.slice(1))) {
       tabsButtons.forEach((tab, i) => {
         if (target == tab) {
           hideContent();
