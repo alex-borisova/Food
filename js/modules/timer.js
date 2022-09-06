@@ -6,11 +6,8 @@ function addZero(param) {
   }
 }
 
-function timer() {
+function timer(timerSelector, deadline) {
   //Timer
-
-  const deadline = "2022-12-31";
-
   function getTime(endtime) {
     let dif = Date.parse(endtime) - Date.parse(new Date()),
       days = Math.floor(dif / (1000 * 60 * 60 * 24)),
@@ -51,7 +48,7 @@ function timer() {
     }
   }
 
-  setTime(".timer", deadline);
+  setTime(timerSelector, deadline);
 }
 
 export default timer;

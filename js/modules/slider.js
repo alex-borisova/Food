@@ -1,13 +1,19 @@
 import { addZero } from "./timer";
 
-function slider() {
+function slider({
+  prevButtonSelector,
+  nextButtonSelector,
+  slidesSelector,
+  currenId,
+  totalId,
+}) {
   // Slider
 
-  const prevButton = document.querySelector(".offer__slider-prev");
-  const nextButton = document.querySelector(".offer__slider-next");
-  const slides = document.querySelectorAll(".offer__slide");
-  const curren = document.querySelector("#current");
-  const total = document.querySelector("#total");
+  const prevButton = document.querySelector(prevButtonSelector);
+  const nextButton = document.querySelector(nextButtonSelector);
+  const slides = document.querySelectorAll(slidesSelector);
+  const curren = document.querySelector(currenId);
+  const total = document.querySelector(totalId);
 
   total.textContent = addZero(slides.length);
 
