@@ -227,12 +227,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function forms(formSelector, modalTimerId) {
-  ///Forms
   const forms = document.querySelectorAll(formSelector);
 
   const message = {
     loading: "./img/forms/spinner.svg",
     failur: "Что-то пошло не так...",
+    success: "Спасибо! Скоро мы с вами свяжемся",
   };
 
   forms.forEach((item) => {
@@ -246,8 +246,9 @@ function forms(formSelector, modalTimerId) {
       let statusMessage = document.createElement("img");
       statusMessage.src = message.loading;
       statusMessage.style.cssText = `
-      display: block;
-      margin: 0 auto`;
+        display: block;
+        margin: 0 auto;
+      `;
       form.insertAdjacentElement("afterend", statusMessage);
 
       const formData = new FormData(form);
@@ -273,17 +274,18 @@ function forms(formSelector, modalTimerId) {
 
     (0,_modal__WEBPACK_IMPORTED_MODULE_0__.openModal)(".modal", modalTimerId);
 
-    const thankswModal = document.createElement("div");
-    thankswModal.classList.add("modal__dialog");
-    thankswModal.innerHTML = `
+    const thanksModal = document.createElement("div");
+    thanksModal.classList.add("modal__dialog");
+    thanksModal.innerHTML = `
           <div class="modal__content">
-            <div data-closed="" class="modal__close">×</div>
+            <div data-closed class="modal__close">×</div>
             <div class="modal__title">${message}</div>
-          </div>`;
+          </div>
+    `;
 
-    document.querySelector(".modal").append(thankswModal);
+    document.querySelector(".modal").append(thanksModal);
     setTimeout(() => {
-      thankswModal.remove();
+      thanksModal.remove();
       prevModal.classList.add("show");
       prevModal.classList.remove("hide");
       (0,_modal__WEBPACK_IMPORTED_MODULE_0__.closeModal)(".modal");
