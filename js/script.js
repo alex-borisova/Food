@@ -6,6 +6,7 @@ import modal from "./modules/modal";
 import timer from "./modules/timer";
 import slider from "./modules/slider";
 import { openModal } from "./modules/modal";
+import "nodelist-foreach-polyfill";
 
 window.addEventListener("DOMContentLoaded", () => {
   const modalTimerId = setTimeout(
